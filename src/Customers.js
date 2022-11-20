@@ -65,7 +65,7 @@ const Customers = () => {
         //console.log(data.message);
         if (data.Message === "SUCCESS") {
           alert("Customer creado con exito");
-          window.location.href = "/";
+          // window.location.href = "/";
         }
         console.log("******__****: ", res);
       })
