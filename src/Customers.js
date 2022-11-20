@@ -36,7 +36,7 @@ const Customers = () => {
 
   const {
     register,
-    // handleSubmit,
+    handleSubmit,
     formState: { errors },
   } = useForm();
 
@@ -44,7 +44,7 @@ const Customers = () => {
     const addCustomer = `http://localhost:7000/customers  `;
 
 
-    e.preventDefault();
+   // e.preventDefault();
     const data = {
       id: "6", // esto sera manejado con algun paquete para id's automaticos
       name: name,
@@ -78,13 +78,14 @@ const Customers = () => {
   return (
     <section className="">
       {/* { country.alpha3Code } */}
-      <form onSubmit={sentData}>
+      <form onSubmit={handleSubmit(sentData)}>
         <p> Ingresa tus datos</p>
         <input
           {...register("fullName", { required: true })}
           placeholder={"Ingresa tu nombre"}
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
         {errors.fullName && <p>Full name is required.</p>}
         <p>
